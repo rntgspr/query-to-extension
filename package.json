@@ -1,0 +1,31 @@
+{
+  "name": "query-to-extension",
+  "version": "1.0.0",
+  "description": "Plugin that connects react-query to chrome extension service worker",
+  "main": "./dist/*",
+  "scripts": {
+    "prebuild": "rm -rf ./dist/*",
+    "postbuild": "node ./postbuild.mjs",
+    "build": "node ./esbuild/build.mjs",
+    "predev": "rm -rf ./dist/*",
+    "dev": "npm run postbuild && node ./esbuild/build.mjs --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Renato Gaspar",
+    "email":  "rntgspr@gmail.com"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@tanstack/react-query": "^5.8.4",
+    "@types/chrome": "^0.0.248",
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.19.5",
+    "esbuild-plugin-copy": "^2.1.1",
+    "tiny-glob": "^0.2.9",
+    "typescript": "5.2.2"
+  },
+  "files": [
+    "dist/*"
+  ]
+}
