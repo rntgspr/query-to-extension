@@ -1,6 +1,6 @@
 {
   "name": "query-to-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin that connects react-query to chrome extension service worker",
   "main": "./dist/*",
   "scripts": {
@@ -15,7 +15,7 @@
     "name": "Renato Gaspar",
     "email":  "rntgspr@gmail.com"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "@tanstack/react-query": "^5.8.4",
     "@types/chrome": "^0.0.248",
