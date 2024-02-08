@@ -1,6 +1,6 @@
 {
   "name": "query-to-extension",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Plugin that connects react-query to chrome extension service worker",
   "main": "./dist/*",
   "scripts": {

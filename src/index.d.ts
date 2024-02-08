@@ -1,24 +1,24 @@
 import type { QueryKey, QueryClient } from "@tanstack/react-query";
 
-type MappedQueryListenerMessage<K, T = any, M = any> = {
-  queryKey: K;
+export type MappedQueryListenerMessage<T = any, M = any> = {
+  queryKey: QueryKey;
   data?: T;
   meta?: M;
 };
 
-type MappedQueryListener<K> = (context: MappedQueryListenerMessage<K>) => void;
+type MappedQueryListener = (context: MappedQueryListenerMessage) => void;
 
-type MappedQuery<K> = {
-  queryKey: K;
-  listenerFn: MappedQueryListener<K>;
+type MappedQuery = {
+  queryKey: QueryKey;
+  listenerFn: MappedQueryListener;
   broadcast?: boolean;
 };
 
-type QueryMap<K> = Array<MappedQuery<K>>;
+type QueryMap = Array<MappedQuery>;
 
-export function registerQueriesMap<K = QueryKey, M = any>(
-  queriesMap: QueryMap<K>,
-  mutationFn: (variables: any) => Promise<M>
+export function registerQueriesMap<M = any>(
+  queriesMap: QueryMap,
+  mutationFn: (message: any) => Promise<M>
 ): Promise<void>;
 
 type ConnectionOptions = {
